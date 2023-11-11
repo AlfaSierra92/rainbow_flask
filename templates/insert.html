@@ -1,0 +1,41 @@
+<html>
+    <body>
+    <table class="frame">
+            <tr><td><div class="colorbox" style="background-color:rgb({{red}}, {{green}}, {{blue}});">&nbsp;</div></td></tr>
+            <tr><td class="colordescription">{{name}}: {{rgb}}</td></tr>
+        </table>
+     <form method="POST">
+        <table>
+            <tr>
+                <td>
+                    NAME
+                </td>
+                <td>
+                    {{form.red.label}}
+                </td>
+                <td>
+                    {{form.green.label}}
+                </td>
+                <td>
+                    {{form.blue.label}}
+                </td>
+            </tr>
+            <TR>
+                {{form.label}}
+            </TR>
+            <TR>
+                {{form.red}}
+            </TR>
+            <TR>
+                {{form.green}}
+            </TR>
+            <TR>
+                {{form.blue}}
+            </TR>
+            <tr>
+                <input type="submit" value="Insert">
+            </tr>
+        </table>
+     </form>
+    </body>
+</html>
