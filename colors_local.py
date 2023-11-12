@@ -3,6 +3,7 @@ import json
 
 class Colors(object):
     def __init__(self):
+        self.color_db = None
         self.populate_db('colors.json')
 
     def add_color(self, color_name, red, green, blue):

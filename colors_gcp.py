@@ -11,12 +11,12 @@ class Colors(object):
         rgbcode = '#%02X%02X%02X' % (red, green, blue)
         colors_ref = self.db.collection('colors')
         h = {'color': color_name,
-            'category': 'hue',
-            'type': 'primary',
-            'code': {
-               'rgba': [red, green, blue, 1],
-               'hex': rgbcode
-            }}
+             'category': 'hue',
+             'type': 'primary',
+             'code': {
+                 'rgba': [red, green, blue, 1],
+                 'hex': rgbcode
+             }}
         colors_ref.document(h['color']).set(h)
 
     def del_color(self, color_name):
@@ -28,7 +28,6 @@ class Colors(object):
         with open(filename) as f:
             colors = json.load(f)
         for h in colors:
-            # self.color_db[h['color']] = h
             colors_ref.document(h['color']).set(h)  # nella raccolta colors ci metto i vari colori
             # (sarebbero i documenti chiamati col nome dei "keys")
 
@@ -37,11 +36,8 @@ class Colors(object):
         color = color.lower()
         # if color in self.color_db.keys():
         if color != "":
-            # c = self.color_db[color]
             c = self.db.collection('colors').document(color).get()
-            # rgba.append(c['code']['rgba'])
             rgba.append(c.get("code.rgba"))
-            # rgba.append(c['code']['hex'])
             rgba.append(c.get("code.hex"))
             return rgba
         else:
@@ -49,10 +45,6 @@ class Colors(object):
 
     def get_color(self, name):
         name = name.lower()
-        # if name in self.color_db.keys():
-        #    return self.color_db[name]
-        # else:
-        #    return None
         if name in self.db.collection('colors').get():
             return name
         else:
@@ -60,8 +52,6 @@ class Colors(object):
 
     def get_list(self):
         colors_list = []
-        # for h in self.color_db.keys():
-        #    colors_list.append(h)
         for h in self.db.collection('colors').stream():
             colors_list.append(h.id)
         return colors_list
