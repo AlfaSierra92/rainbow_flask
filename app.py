@@ -84,12 +84,8 @@ def insert_color():
         cform = Colorform(request.form)
         colors_dao.add_color(cform.label.data, cform.red.data, cform.green.data, cform.blue.data)
         c = {'label': cform.label.data, 'red': cform.red.data, 'green': cform.green.data, 'blue': cform.blue.data}
-    # if c is None:
-    #    c = {'red': 0, 'green': 0, 'blue': 0}
-    # rgba = colors_dao.get_rgba(color)
     if request.method == 'GET':
         cform = Colorform(obj=Struct(**c))
-        # colors_dao.get_color()
     rgbcode = '#%02X%02X%02X' % (c['red'], c['green'], c['blue'])
     return render_template('insert.html', name=c['label'], rgb=rgbcode, red=c['red'], green=c['green'], blue=c['blue'], form=cform)
 
