@@ -5,37 +5,23 @@
             <tr><td class="colordescription">{{name}}: {{rgb}}</td></tr>
         </table>
      <form method="POST">
-        <table>
-            <tr>
-                <td>
-                    NAME
-                </td>
-                <td>
-                    {{form.red.label}}
-                </td>
-                <td>
-                    {{form.green.label}}
-                </td>
-                <td>
-                    {{form.blue.label}}
-                </td>
-            </tr>
-            <TR>
-                {{form.label}}
-            </TR>
-            <TR>
-                {{form.red}}
-            </TR>
-            <TR>
-                {{form.green}}
-            </TR>
-            <TR>
-                {{form.blue}}
-            </TR>
-            <tr>
-                <input type="submit" value="Insert">
-            </tr>
-        </table>
+            <table class="table" style="width:100%">
+                <tr>
+                  <th>Name</th>
+                  <th>{{form.red.label}}</th>
+                  <th>{{form.green.label}}</th>
+                    <th>{{form.blue.label}}</th>
+                </tr>
+                <tr>
+                  <td>{{form.label}}</td>
+                  <td>{{form.red}}</td>
+                  <td>{{form.green}}</td>
+                    <td>{{form.blue}}</td>
+                </tr>
+                <tr>
+                  <td><input type="submit" value="Insert"></td>
+                </tr>
+            </table>
      </form>
     </body>
 </html>
