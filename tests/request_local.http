@@ -34,7 +34,7 @@ Content-Type: application/json
 
 # CANCELLA COLORE
 # curl -X DELETE -v http://127.0.0.1:5000/api/v1/colors/blue
-DELETE http://127.0.0.1:5000/api/v1/colors/blue
+DELETE http://127.0.0.1:5000/api/v1/colors/viva
 
 ###
 
