@@ -1,4 +1,5 @@
 <html>
+    <link rel="stylesheet" href="/static/colors.css">
     <body>
     <table class="frame">
             <tr><td><div class="colorbox" style="background-color:rgb({{red}}, {{green}}, {{blue}});">&nbsp;</div></td></tr>
@@ -6,20 +7,20 @@
         </table>
      <form method="POST">
             <table class="table" style="width:100%">
-                <tr>
-                  <th>Name</th>
-                  <th>{{form.red.label}}</th>
-                  <th>{{form.green.label}}</th>
-                    <th>{{form.blue.label}}</th>
+                <tr class="td">
+                  <th class="th">Name</th>
+                  <th class="th">{{form.red.label}}</th>
+                  <th class="th">{{form.green.label}}</th>
+                    <th class="th">{{form.blue.label}}</th>
                 </tr>
                 <tr>
-                  <td>{{form.label}}</td>
-                  <td>{{form.red}}</td>
-                  <td>{{form.green}}</td>
-                    <td>{{form.blue}}</td>
+                  <td class="td">{{form.label}}</td>
+                  <td class="td">{{form.red}}</td>
+                  <td class="td">{{form.green}}</td>
+                    <td class="td">{{form.blue}}</td>
                 </tr>
                 <tr>
-                  <td><input type="submit" value="Insert"></td>
+                  <td class="td"><input type="submit" value="Insert"></td>
                 </tr>
             </table>
      </form>
