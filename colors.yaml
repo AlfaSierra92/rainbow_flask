@@ -3,7 +3,7 @@ info:
   title: "Colors"
   description: "Manage color with RGB components"
   version: "1.0.0"
-host: "airports-sac-2704.appspot.com"
+host: "assac20231030.appspot.com" # usa project-id.appspot.com !!!
 basePath: "/api/v1"
 schemes:
   - "https"

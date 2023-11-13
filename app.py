@@ -33,8 +33,10 @@ class ColorsResource(Resource):
         colorname = colorname.lower()
         # r = colors_dao.get_rgba(colorname)
         if not colors_dao.get_color(colorname) is None:  # check if it exists
-            return None, 404  # if it exists go out
+            return None, 409  # if it exists go out
         colordata = request.json
+        if colorname is None or colordata['red'] > 255 or colordata['green'] > 255 or colordata['blue'] > 255:
+            return None, 400
         colors_dao.add_color(colorname, colordata['red'], colordata['green'], colordata['blue'])
         return None, 201
 
@@ -42,15 +44,17 @@ class ColorsResource(Resource):
     def put(self, colorname):
         colorname = colorname.lower()
         if colors_dao.get_color(colorname) is None:  # check if it exists
-            return None, 404  # if exists go out
+            return None, 400  # if exists go out
         colordata = request.json
+        if colorname is None or colordata['red'] > 255 or colordata['green'] > 255 or colordata['blue'] > 255:
+            return None, 400
         colors_dao.add_color(colorname, colordata['red'], colordata['green'], colordata['blue'])
         return None, 201
 
     # rimuovi colore
     def delete(self, colorname):
         if colors_dao.get_color(colorname) is None:  # check if it exists
-            return None, 404  # if it doesn't exist go out
+            return None, 400  # if it doesn't exist go out
         colors_dao.del_color(colorname)
         return None, 201
 
