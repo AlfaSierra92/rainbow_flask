@@ -4,6 +4,12 @@ GET https://assac20231030.oa.r.appspot.com/api/v1/colors/
 
 ###
 
+# SELEZIONA COLORE
+# curl -v http://127.0.0.1:5000/api/v1/colors/viva
+GET http://127.0.0.1:5000/api/v1/colors/viva
+
+###
+
 # AGGIORNA COLORE
 # curl -d '{"name": "viva","red": 245,"green": 2,"blue": 255}' -H "Content-Type: application/json" -v -X PUT https://assac20231030.oa.r.appspot.com/api/v1/colors/viva
 PUT https://assac20231030.oa.r.appspot.com/api/v1/colors/viva
